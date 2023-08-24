@@ -30,12 +30,32 @@ public class Inimigo_BlocoQueCai : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        podeCair = false;
+        caiu = false;
+        oRigidbody2D.gravityScale = 0f;
+
+        posicaoInicial = transform.position;
+        tempoAtualParSubir = tempoMaximoParaSubir;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            podeCair = true;
+            AtivarGravidade();
+        }
+    }
+
+    public void AtivarGravidade()
+    {
+        if (podeCair)
+        {
+            caiu = true;
+            oRigidbody2D.gravityScale = forcaDaGravidade;
+        }
+
     }
 }
