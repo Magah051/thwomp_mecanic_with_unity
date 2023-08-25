@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 423667909}
   - component: {fileID: 423667908}
   - component: {fileID: 423667907}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Inimigo-BlocoQueCai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &423667909
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -833,7 +833,7 @@ GameObject:
   - component: {fileID: 2070492615}
   - component: {fileID: 2070492614}
   - component: {fileID: 2070492617}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Jogador
   m_TagString: Player
   m_Icon: {fileID: 0}

@@ -5,20 +5,22 @@ using UnityEngine;
 public class Inimigo_BlocoQueCai : MonoBehaviour
 {
 
+    [Header("Referências gerais")]
     private Rigidbody2D oRigidbody2D;
 
+    [Header("Queda do inimigo")]
     [SerializeField] private float forcaDaGravidade;
-    
-    [SerializeField] private float velocidadeDeSubida;
-
-    [SerializeField] private float tempoMaximoParaSubir;
-
-    private float tempoAtualParSubir;
-    
-    private Vector3 posicaoInicial;
-
     private bool podeCair;
     private bool caiu;
+
+
+    [Header("Subida do inimigo")]
+    [SerializeField] private float velocidadeDeSubida;
+    [SerializeField] private float tempoMaximoParaSubir;
+    private float tempoAtualParSubir;
+    private Vector3 posicaoInicial;
+
+
 
     private void Awake()
     {
@@ -28,7 +30,7 @@ public class Inimigo_BlocoQueCai : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         podeCair = false;
         caiu = false;
@@ -39,16 +41,9 @@ public class Inimigo_BlocoQueCai : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         RodarCronometro();
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            podeCair = true;
-            AtivarGravidade();
-        }
     }
 
     private void RodarCronometro()
