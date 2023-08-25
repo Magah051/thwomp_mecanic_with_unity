@@ -238,6 +238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7166fab72da800945be6805eafd05e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forcaDaGravidade: 4
+  velocidadeDeSubida: 4
+  tempoMaximoParaSubir: 2
 --- !u!50 &423667908
 Rigidbody2D:
   serializedVersion: 4

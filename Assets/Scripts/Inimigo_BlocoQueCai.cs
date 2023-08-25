@@ -42,10 +42,39 @@ public class Inimigo_BlocoQueCai : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        RodarCronometro();
+
         if (Input.GetKeyDown(KeyCode.C))
         {
             podeCair = true;
             AtivarGravidade();
+        }
+    }
+
+    private void RodarCronometro()
+    {
+        if (caiu)
+        {
+            tempoAtualParSubir -= Time.deltaTime;
+
+            if (tempoAtualParSubir <= 0)
+            {
+                caiu = false;
+                oRigidbody2D.gravityScale = 0f;
+                tempoAtualParSubir = tempoMaximoParaSubir;
+            }
+        }
+        else
+        {
+            if (transform.position != posicaoInicial)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, posicaoInicial, velocidadeDeSubida * Time.deltaTime);
+                podeCair = false;
+            }
+            else
+            {
+                podeCair = true;
+            }
         }
     }
 
